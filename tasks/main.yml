@@ -1,8 +1,13 @@
 ---
 - name: apt package updates
   apt:
-      update_cache: yes
-      autoremove: yes
-      autoclean: yes
+      update_cache: true
+      autoremove: true
+      autoclean: true
       upgrade: dist
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: yum package updates
+  yum:
+      name: '*'
+      state: latest
+  when: ansible_distribution == 'CentOS'
