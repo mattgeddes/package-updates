@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Matthew Geddes
+  description: Ansible role to perform standard Linux package updates
+  license: Apache-2.0
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - eoan
+        - disco
+        - cosmic
+        - bionic
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+  galaxy_tags: ["linux", "updates"]
+
+dependencies: []

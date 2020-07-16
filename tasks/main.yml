@@ -1,0 +1,8 @@
+---
+- name: apt package updates
+  apt:
+      update_cache: yes
+      autoremove: yes
+      autoclean: yes
+      upgrade: dist
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
