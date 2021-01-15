@@ -1,2 +1,4 @@
 ---
-# handlers file for package-updates
+- name: ArchLinux cache clean
+  command: paccache -rk1
+  when: arch_updated.changed
