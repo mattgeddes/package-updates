@@ -11,3 +11,12 @@
       name: '*'
       state: latest
   when: ansible_distribution == 'CentOS'
+- name: ArchLinux Pacman package updates
+  pacman:
+      update_cache: yes
+      upgrade: yes
+  register: arch_updated
+  when: ansible_distribution == 'Archlinux'
+- name: ArchLinux cache clean
+  command: paccache -rk1
+  when: arch_updated.changed
